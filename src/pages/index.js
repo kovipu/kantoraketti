@@ -4,8 +4,8 @@ const IndexPage = () => {
   return (
     <main>
       <title>Etusivu</title>
-      <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
-        <h1>Hello world.</h1>
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-background to-background-alt">
+        <h1 className="text-text-inverted text-5xl">Hello world.</h1>
       </div>
     </main>
   );

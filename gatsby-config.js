@@ -26,5 +26,14 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve:"gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          "Oxygen"
+        ],
+        display: "swap"
+      }
+    }
   ],
 };
