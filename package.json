@@ -1,0 +1,30 @@
+{
+  "name": "kantoraketti",
+  "version": "1.0.0",
+  "private": true,
+  "description": "kantoraketti",
+  "author": "Konsta Purtsi",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.1.1",
+    "gatsby-plugin-google-analytics": "^3.1.0",
+    "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-postcss": "^4.1.0",
+    "gatsby-plugin-react-helmet": "^4.1.0",
+    "gatsby-plugin-sitemap": "^3.1.0",
+    "gatsby-source-contentful": "^5.1.2",
+    "postcss": "^8.2.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
+  }
+}
