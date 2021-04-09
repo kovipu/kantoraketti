@@ -28,6 +28,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "sync-fetch": "^0.3.0",
     "tailwindcss": "^2.0.4"
   }
 }

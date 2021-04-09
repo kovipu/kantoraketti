@@ -1,4 +1,7 @@
+const fetchTheme = require("./lib/fetchTheme");
+
 const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env;
+const { fontFamily } = fetchTheme();
 
 module.exports = {
   siteMetadata: {
@@ -27,11 +30,9 @@ module.exports = {
       },
     },
     {
-      resolve:"gatsby-plugin-google-fonts",
+      resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [
-          "Oxygen"
-        ],
+        fonts: [fontFamily],
         display: "swap"
       }
     }

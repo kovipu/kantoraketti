@@ -1,20 +1,22 @@
+const fetchTheme = require("./lib/fetchTheme");
+const { fontFamily, backgroundColor, backgroundColorAlternative, textColor, textColorInverted } = fetchTheme();
+
 module.exports = {
   purge: ["./src/**/*.js"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       background: {
-        DEFAULT: "#79a325",
-        alt: "#BEF264"
+        DEFAULT: backgroundColor,
+        alt: backgroundColorAlternative
       },
       text: {
-        DEFAULT: "#000",
-        inverted: "#fff",
-        header: "#000",
+        DEFAULT: textColor,
+        inverted: textColorInverted
       },
     },
     fontFamily: {
-      sans: ["Oxygen", "sans-serif"]
+      sans: [fontFamily, "sans-serif"]
     },
     extend: {},
   },
