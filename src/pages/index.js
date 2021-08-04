@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import RichText from '../components/RichText';
+import RichText from '../components/richtext';
 
 const IndexPage = (props) => {
   const { title, heroImage, bio } = props.data.contentfulLandingPage;
