@@ -1,3 +1,5 @@
+const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env;
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
@@ -7,8 +9,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: 'AoV4p3Bn-__ZD0aThCI8xDrOciWwFGbvokrAlGaW1NI',
-        spaceId: 'lngivlfe0aod'
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
+        spaceId: CONTENTFUL_SPACE_ID
       }
     },
     'gatsby-plugin-postcss',
