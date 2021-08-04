@@ -1,9 +1,13 @@
+const fetchMeta = require(`./lib/fetchMeta`);
+
 const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env;
+
+const { siteUrl, title, logo } = fetchMeta();
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'Kantoraketti'
+    siteUrl,
+    title
   },
   plugins: [
     {
@@ -15,28 +19,14 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
-    // {
-    //   resolve: 'gatsby-plugin-google-analytics',
-    //   options: {
-    //     trackingId: ''
-    //   }
-    // },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png'
+        icon: `assets/${logo.fileName}`
       }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './src/images/'
-      },
-      __key: 'images'
-    }
   ]
 };
