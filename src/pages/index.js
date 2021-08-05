@@ -1,18 +1,24 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
+
+import Seo from '../components/seo';
 import RichText from '../components/richtext';
 
 const IndexPage = (props) => {
-  const { title, heroImage, bio } = props.data.contentfulLandingPage;
+  const { heroImage, bio } = props.data.contentfulLandingPage;
 
   return (
     <main>
-      <title>{title}</title>
+      <Seo />
       <div className="flex flex-wrap-reverse justify-center items-end min-h-screen bg-background md:items-center">
         <div className="text-text-inverted m-8 max-w-md text-lg">
           <RichText data={bio} />
         </div>
-        <img src={heroImage.fixed.src} className="h-96 max-w-screen md:max-w-lg md:rounded-lg md:shadow-md md:m-8" />
+        <img
+          src={heroImage.fixed.src}
+          alt=""
+          className="h-96 max-w-screen md:max-w-lg md:rounded-lg md:shadow-md md:m-8"
+        />
       </div>
     </main>
   );

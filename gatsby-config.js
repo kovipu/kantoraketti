@@ -2,12 +2,14 @@ const fetchMeta = require(`./lib/fetchMeta`);
 
 const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env;
 
-const { siteUrl, title, logo } = fetchMeta();
+const { siteUrl, title, description, lang, logo } = fetchMeta();
 
 module.exports = {
   siteMetadata: {
     siteUrl,
-    title
+    title,
+    description,
+    lang
   },
   plugins: [
     {
@@ -27,6 +29,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    'gatsby-transformer-sharp'
   ]
 };
