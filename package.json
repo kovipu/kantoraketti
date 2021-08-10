@@ -9,11 +9,12 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "prettify": "npx prettier --write \"**/*.js\""
+    "prettify": "npx prettier --write \"**/*.js\"",
+    "refresh": "curl -X POST http://localhost:8000/__refresh"
   },
   "dependencies": {
     "gatsby": "^3.10.2",

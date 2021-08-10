@@ -1,5 +1,13 @@
 const fetchTheme = require('./lib/fetchTheme');
-const { fontFamily, backgroundColor, backgroundColorAlternative, textColor, textColorInverted } = fetchTheme();
+const {
+  fontFamily,
+  backgroundColor,
+  backgroundColorAlternative,
+  textColor,
+  textColorInverted,
+  headerColor,
+  accentColor
+} = fetchTheme();
 
 module.exports = {
   purge: ['./src/**/*.js'],
@@ -12,7 +20,9 @@ module.exports = {
       },
       text: {
         DEFAULT: textColor,
-        inverted: textColorInverted
+        inverted: textColorInverted,
+        header: headerColor,
+        accent: accentColor
       }
     },
     fontFamily: {
