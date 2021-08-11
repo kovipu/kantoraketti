@@ -1,8 +1,10 @@
 const fetchMeta = require(`./lib/fetchMeta`);
+const fetchTheme = require("./lib/fetchTheme");
 
 const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env;
 
 const { siteUrl, title, description, lang, logo } = fetchMeta();
+const { fontFamily } = fetchTheme(); 
 
 module.exports = {
   siteMetadata: {
@@ -29,6 +31,13 @@ module.exports = {
       }
     },
     'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp'
+    'gatsby-transformer-sharp',
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: [fontFamily],
+        display: "swap"
+      }
+    }
   ]
 };
