@@ -27,6 +27,9 @@ const Seo = ({ description, lang, title }) => {
       htmlAttributes={{
         lang
       }}
+      bodyAttributes={{
+        class: 'bg-background'
+      }}
       title={pageTitle}
       meta={[
         {

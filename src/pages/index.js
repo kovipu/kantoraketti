@@ -9,11 +9,11 @@ const IndexPage = (props) => {
   const { heroImage, bio } = props.data.contentfulLandingPage;
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen">
       <Header />
       <Seo />
       <div className="flex flex-wrap-reverse justify-center items-end md:items-center">
-        <div className="text-text-inverted m-8 max-w-md text-lg">
+        <div className="text-text-inverted m-4 max-w-md text-lg">
           <RichText data={bio} />
         </div>
         <img

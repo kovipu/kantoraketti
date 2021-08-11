@@ -1,10 +1,12 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useState } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import Hamburger from './hamburger';
+import Menu from './menu';
 
-const Header = ({ children }) => {
+const Header = () => {
   const { contentfulLandingPage, contentfulNavigation } = useStaticQuery(graphql`
     query HeaderQuery {
-      contentfulLandingPage(isPublished: {eq:"published"}) {
+      contentfulLandingPage(isPublished: { eq: "published" }) {
         logo {
           file {
             url
@@ -22,25 +24,33 @@ const Header = ({ children }) => {
     }
   `);
 
-  console.log(contentfulNavigation);
+  const items = contentfulNavigation.items;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleClick = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="w-full p-6 flex z-10 absolute md:relative md:p-9">
-      <div className="w-full px-8 max-w-3xl mx-auto flex items-center">
-        <a href="/">
+    <header className="top-0 w-full flex z-10 absolute md:relative md:p-9">
+      <div className="w-full px-4 md:px-8 max-w-3xl mx-auto flex items-center">
+        <Link to="/" className="z-10">
           <img src={contentfulLandingPage.logo.file.url} alt="Site logo" className="h-10 m-3 flex" />
-        </a>
+        </Link>
 
         <div className="ml-auto">
-        {contentfulNavigation.items.map(({ urlSlug, title }) => (
-          <a href={urlSlug} className="py-2 px-3 m-2 rounded-full text-text-accent text-lg hover:underline">
-            {title}
-          </a>
-        ))}
+          {items.map(({ urlSlug, title }) => (
+            <Link
+              to={`/${urlSlug}`}
+              className="py-2 px-3 m-2 text-text-accent text-lg hover:underline hidden lg:inline">
+              {title}
+            </Link>
+          ))}
+          <Hamburger onClick={handleClick} isOpen={isMenuOpen} />
         </div>
       </div>
+      <Menu isOpen={isMenuOpen} items={items} />
     </header>
   );
-}
+};
 
 export default Header;
