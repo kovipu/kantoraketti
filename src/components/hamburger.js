@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Hamburger = ({ onClick, isOpen }) => {
-  const genericHamburgerLine = 'h-1 w-7 my-1 rounded-full bg-text-accent transition ease transform duration-300';
+  const genericHamburgerLine = 'h-1 w-7 my-1 rounded-full bg-header-text transition ease transform duration-300';
 
   return (
     <button className="flex flex-col h-12 w-12 justify-center items-center relative lg:hidden z-10" onClick={onClick}>
