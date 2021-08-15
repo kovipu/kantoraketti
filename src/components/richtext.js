@@ -1,7 +1,7 @@
 import React from 'react';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
-import Img from "gatsby-image"
+import Img from 'gatsby-image';
 
 const options = {
   renderMark: {
@@ -28,7 +28,7 @@ const options = {
         key={data.target.contentful_id}
         fluid={data.target.fluid}
         alt={data.target.title}
-        />
+      />
     )
   }
 };
