@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import React, { useState } from 'react';
+import { useStaticQuery, graphql, Link, navigate } from 'gatsby';
 import Hamburger from './hamburger';
 import Menu from './menu';
 import Img from 'gatsby-image';
@@ -41,23 +41,51 @@ const Header = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // close menu on page change.
-  useEffect(() => setIsMenuOpen(false), [window.location.pathname]);
-
   const handleHamburgerClick = () => setIsMenuOpen(!isMenuOpen);
+
+  const navigateAndClose = (urlSlug) => {
+    setIsMenuOpen(false);
+    navigate(`/${urlSlug}`);
+  };
 
   switch (contentfulTheme.siteLayout) {
     case 'A':
     case 'B':
-      return <HeaderA {...{ title, headerSubtitle, heroImage, logoUrl, navItems, isMenuOpen, handleHamburgerClick }} />;
+      return (
+        <HeaderA
+          {...{
+            title,
+            headerSubtitle,
+            heroImage,
+            logoUrl,
+            navItems,
+            isMenuOpen,
+            handleHamburgerClick,
+            navigateAndClose
+          }}
+        />
+      );
     case 'C':
-      return <HeaderC {...{ title, headerSubtitle, heroImage, logoUrl, navItems, isMenuOpen, handleHamburgerClick }} />;
+      return (
+        <HeaderC
+          {...{
+            title,
+            headerSubtitle,
+            heroImage,
+            logoUrl,
+            navItems,
+            isMenuOpen,
+            handleHamburgerClick,
+            navigateAndClose
+          }}
+        />
+      );
     default:
       throw new Error('Invalid site layout');
   }
 };
 
-const HeaderA = ({ logoUrl, navItems, handleHamburgerClick, isMenuOpen }) => (
+const HeaderA = ({ logoUrl, navItems, handleHamburgerClick, isMenuOpen, navigateAndClose }) => (
   <header className="top-0 w-full flex z-10 absolute md:relative md:p-3 bg-header-background">
     <div className="w-full px-4 md:px-8 max-w-3xl mx-auto flex items-center">
       <Link to="/" className="z-10">
@@ -76,11 +104,20 @@ const HeaderA = ({ logoUrl, navItems, handleHamburgerClick, isMenuOpen }) => (
         <Hamburger onClick={handleHamburgerClick} isOpen={isMenuOpen} />
       </div>
     </div>
-    <Menu isOpen={isMenuOpen} items={navItems} />
+    <Menu isOpen={isMenuOpen} items={navItems} onLinkClick={navigateAndClose} />
   </header>
 );
 
-const HeaderC = ({ title, headerSubtitle, heroImage, logoUrl, navItems, handleHamburgerClick, isMenuOpen }) => {
+const HeaderC = ({
+  title,
+  headerSubtitle,
+  heroImage,
+  logoUrl,
+  navItems,
+  handleHamburgerClick,
+  navigateAndClose,
+  isMenuOpen
+}) => {
   const isIndexPage = window.location.pathname === '/';
 
   return (
@@ -114,7 +151,7 @@ const HeaderC = ({ title, headerSubtitle, heroImage, logoUrl, navItems, handleHa
           </Link>
         ))}
       </nav>
-      <Menu isOpen={isMenuOpen} items={navItems} />
+      <Menu isOpen={isMenuOpen} items={navItems} onLinkClick={navigateAndClose} />
     </>
   );
 };
