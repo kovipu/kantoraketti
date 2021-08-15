@@ -2,9 +2,9 @@ import React from 'react';
 import Footer from './footer';
 import Header from './header';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <>
-    <Header />
+    <Header isIndexPage={location.pathname === '/'} />
     {children}
     <Footer />
   </>

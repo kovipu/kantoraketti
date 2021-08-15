@@ -4,7 +4,7 @@ import Hamburger from './hamburger';
 import Menu from './menu';
 import Img from 'gatsby-image';
 
-const Header = () => {
+const Header = ({ isIndexPage }) => {
   const { contentfulLandingPage, contentfulNavigation, contentfulTheme } = useStaticQuery(graphql`
     query HeaderQuery {
       contentfulLandingPage(isPublished: { eq: "published" }) {
@@ -54,6 +54,7 @@ const Header = () => {
       return (
         <HeaderA
           {...{
+            isIndexPage,
             title,
             headerSubtitle,
             heroImage,
@@ -69,6 +70,7 @@ const Header = () => {
       return (
         <HeaderC
           {...{
+            isIndexPage,
             title,
             headerSubtitle,
             heroImage,
@@ -109,6 +111,7 @@ const HeaderA = ({ logoUrl, navItems, handleHamburgerClick, isMenuOpen, navigate
 );
 
 const HeaderC = ({
+  isIndexPage,
   title,
   headerSubtitle,
   heroImage,
@@ -118,9 +121,6 @@ const HeaderC = ({
   navigateAndClose,
   isMenuOpen
 }) => {
-  const pathname = typeof window !== undefined ? window.location.pathname : '';
-  const isIndexPage = pathname === '/';
-
   return (
     <>
       <div
