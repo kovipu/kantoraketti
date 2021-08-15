@@ -13,7 +13,7 @@ const IndexPage = (props) => {
       <Header />
       <Seo />
       <div className="flex flex-wrap-reverse justify-center items-end md:items-center">
-        <div className="text-text-inverted m-4 max-w-md text-lg">
+        <div className="text-text m-4 max-w-md text-lg">
           <RichText data={bio} />
         </div>
         <img
@@ -31,7 +31,7 @@ export const query = graphql`
     contentfulLandingPage(isPublished: { eq: "published" }) {
       title
       heroImage {
-        fixed {
+        fixed(quality: 100, width: 1920) {
           src
         }
       }

@@ -33,7 +33,7 @@ const Seo = ({ description, lang, title }) => {
       title={pageTitle}
       meta={[
         {
-          name: `description`,
+          name: `a`,
           content: metaDescription
         },
         {

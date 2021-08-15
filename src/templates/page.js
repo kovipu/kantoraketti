@@ -13,7 +13,7 @@ const Page = ({ data }) => {
       <Header />
       <Seo title={title} description={description} lang={lang} />
       <article className="mt-20">
-        <div className="max-w-3xl mx-auto p-4 md:p-8 text-text-inverted">
+        <div className="max-w-3xl mx-auto p-4 md:p-8 text-text">
           <RichText data={body} />
         </div>
       </article>

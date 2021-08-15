@@ -1,12 +1,18 @@
 const fetchTheme = require('./lib/fetchTheme');
 const {
   fontFamily,
+  titleFontFamily,
   backgroundColor,
   backgroundColorAlternative,
+  headerBackgroundColor,
+  headerTextColor,
+  menuBackgroundColor,
+  menuTextColor,
+  headingColor,
   textColor,
   textColorInverted,
-  headerColor,
-  accentColor
+  accentColor,
+  linkColor
 } = fetchTheme();
 
 module.exports = {
@@ -18,15 +24,25 @@ module.exports = {
         DEFAULT: backgroundColor,
         alt: backgroundColorAlternative
       },
+      header: {
+        background: headerBackgroundColor,
+        text: headerTextColor
+      },
+      menu: {
+        background: menuBackgroundColor,
+        text: menuTextColor
+      },
       text: {
         DEFAULT: textColor,
         inverted: textColorInverted,
-        header: headerColor,
-        accent: accentColor
+        heading: headingColor,
+        accent: accentColor,
+        link: linkColor
       }
     },
     fontFamily: {
-      sans: [fontFamily, 'sans-serif']
+      sans: [fontFamily, 'sans-serif'],
+      serif: [titleFontFamily, 'serif']
     },
     extend: {}
   },
