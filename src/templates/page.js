@@ -32,9 +32,10 @@ export const query = graphql`
         references {
           ... on ContentfulAsset {
             contentful_id
-            fixed {
-              src
-              srcSet
+            __typename
+            title
+            fluid(maxWidth: 1000) {
+              ...GatsbyContentfulFluid
             }
           }
         }

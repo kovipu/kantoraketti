@@ -63,6 +63,7 @@ const HeaderA = ({ title, logoUrl, navItems, handleHamburgerClick, isMenuOpen })
       <div className="ml-auto">
         {navItems.map(({ urlSlug, title }) => (
           <Link
+            key={title}
             to={`/${urlSlug}`}
             className="py-2 px-3 m-2 text-header-text text-lg hover:underline hidden lg:inline">
             {title}
@@ -94,6 +95,7 @@ const HeaderC = ({ title, headerSubtitle, logoUrl, navItems, handleHamburgerClic
     <nav className="hidden lg:block bg-menu-background text-center leading-4 p-2">
       {navItems.map(({ urlSlug, title }) => (
         <Link
+          key={title}
           to={`/${urlSlug}`}
           className="leading-loose m-3 text-header-text text-2xl hover:underline">
           {title}

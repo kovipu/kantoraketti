@@ -1,6 +1,7 @@
 import React from 'react';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
+import Img from "gatsby-image"
 
 const options = {
   renderMark: {
@@ -21,16 +22,14 @@ const options = {
         {children}
       </a>
     ),
-    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-      return (
-        <>
-          <h2>Embedded Asset</h2>
-          <pre>
-            <code>{JSON.stringify(node, null, 2)}</code>
-          </pre>
-        </>
-      );
-    }
+    [BLOCKS.EMBEDDED_ASSET]: ({ data }) => (
+      <Img
+        className="m-3 rounded-lg"
+        key={data.target.contentful_id}
+        fluid={data.target.fluid}
+        alt={data.target.title}
+        />
+    )
   }
 };
 
