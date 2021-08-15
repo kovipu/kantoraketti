@@ -118,7 +118,8 @@ const HeaderC = ({
   navigateAndClose,
   isMenuOpen
 }) => {
-  const isIndexPage = typeof window !== undefined && window.location.pathname === '/';
+  const pathname = typeof window !== undefined ? window.location.pathname : '';
+  const isIndexPage = pathname === '/';
 
   return (
     <>
