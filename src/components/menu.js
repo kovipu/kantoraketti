@@ -20,7 +20,7 @@ const Menu = ({ isOpen, onLinkClick }) => {
       }`}>
       <ul className="m-8">
         {contentfulNavigation.items.map(({ title, urlSlug }) => (
-          <li key={title} className="text-2xl text-menu-text my-4 hover:underline">
+          <li key={title} className="text-2xl text-menu-text my-4 hover:underline cursor-pointer">
             <a onClick={() => onLinkClick(urlSlug)}>{title}</a>
           </li>
         ))}

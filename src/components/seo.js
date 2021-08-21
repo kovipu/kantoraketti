@@ -28,7 +28,7 @@ const Seo = ({ description, lang, title }) => {
         lang
       }}
       bodyAttributes={{
-        class: 'bg-background'
+        class: 'bg-gradient-to-b from-background to-background-alt'
       }}
       title={pageTitle}
       meta={[
