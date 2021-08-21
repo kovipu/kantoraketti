@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Hamburger = ({ onClick, isOpen, showOnDesktop }) => {
-  const genericHamburgerLine = 'h-1 w-7 my-1 rounded-full bg-header-text transition ease transform duration-300';
+  const genericHamburgerLine = `h-1 w-7 my-1 rounded-full ${
+    isOpen ? 'bg-header-hamburger-alt' : 'bg-header-hamburger'
+  } transition ease transform duration-300`;
 
   return (
     <button

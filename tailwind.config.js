@@ -6,6 +6,8 @@ const {
   backgroundColorAlternative,
   headerBackgroundColor,
   headerTextColor,
+  hamburgerColor,
+  hamburgerColorAlt,
   menuBackgroundColor,
   menuTextColor,
   headingColor,
@@ -14,7 +16,7 @@ const {
   accentColor,
   linkColor,
   footerBackgroundColor,
-  footerTextColor,
+  footerTextColor
 } = fetchTheme();
 
 module.exports = {
@@ -28,7 +30,11 @@ module.exports = {
       },
       header: {
         background: headerBackgroundColor,
-        text: headerTextColor
+        text: headerTextColor,
+        hamburger: {
+          DEFAULT: hamburgerColor,
+          alt: hamburgerColorAlt
+        }
       },
       menu: {
         background: menuBackgroundColor,

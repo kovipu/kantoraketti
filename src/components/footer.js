@@ -31,9 +31,13 @@ const Footer = () => {
       <img src={contentfulLandingPage.footerLogo.file.url} alt="logo" className="h-28 w-28" />
       <RichText data={contentfulLandingPage.footerText} />
       <ul className="flex flex-row flex-wrap">
-        {allContentfulFooterLink.nodes.map(item => (
+        {allContentfulFooterLink.nodes.map((item) => (
           <li key={item.link}>
-            <a className="flex items-center p-4 hover:text-text-inverted" href={item.link}>
+            <a
+              className="flex items-center p-4 hover:text-background"
+              href={item.link}
+              target="_blank"
+              rel="noreferrer">
               <Icon linkType={item.linkType} />
               {item.text}
             </a>
@@ -42,10 +46,10 @@ const Footer = () => {
       </ul>
     </footer>
   );
-}
+};
 
 const Icon = ({ linkType }) => {
-  const iconStyle = "w-8 h-8 mr-2"
+  const iconStyle = 'w-8 h-8 mr-2';
 
   switch (linkType) {
     case 'Discord':
