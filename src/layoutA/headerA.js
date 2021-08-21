@@ -7,7 +7,7 @@ const HeaderA = ({ handleHamburgerClick, isMenuOpen, children }) => {
   const { contentfulLandingPage, contentfulNavigation } = useStaticQuery(graphql`
     query {
       contentfulLandingPage(isPublished: { eq: "published" }) {
-        logo {
+        headerLogo {
           file {
             url
           }
@@ -26,7 +26,7 @@ const HeaderA = ({ handleHamburgerClick, isMenuOpen, children }) => {
     <header className="top-0 w-full flex z-10 absolute md:relative md:p-3 bg-header-background">
       <div className="w-full px-4 md:px-8 max-w-3xl mx-auto flex items-center">
         <Link to="/" className="z-10">
-          <img src={contentfulLandingPage.logo.file.url} alt="Site logo" className="h-10 m-3 flex" />
+          <img src={contentfulLandingPage.headerLogo.file.url} alt="Site logo" className="h-10 m-3 flex" />
         </Link>
 
         <div className="ml-auto">

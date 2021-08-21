@@ -15,7 +15,7 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
             ...GatsbyContentfulFluid
           }
         }
-        logo {
+        headerLogo {
           file {
             url
           }
@@ -30,7 +30,7 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
     }
   `);
 
-  const { title, headerSubtitle, heroImage, logo } = contentfulLandingPage;
+  const { title, headerSubtitle, heroImage, headerLogo } = contentfulLandingPage;
   const { items } = contentfulNavigation;
 
   return (
@@ -48,7 +48,7 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
         />
         <div className="row-start-1 col-start-1 flex justify-center items-center z-10">
           <Link to="/" className="flex items-center">
-            <img src={logo.file.url} alt="Site logo" className="h-20 lg:h-32 flex" />
+            <img src={headerLogo.file.url} alt="Site logo" className="h-20 lg:h-32 flex" />
             <h1 className="font-serif text-header-text z-10 text-5xl lg:text-7xl uppercase">{title}</h1>
             <p className="hidden md:block text-header-text text-2xl w-52 m-7">{headerSubtitle}</p>
           </Link>

@@ -3,7 +3,7 @@ const fetchTheme = require('./lib/fetchTheme');
 
 const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_PREVIEW_ACCESS_TOKEN, CONTENTFUL_SPACE_ID, CONTENTFUL_HOST } = process.env;
 
-const { siteUrl, title, description, lang, logo } = fetchMeta();
+const { siteUrl, title, description, lang, favicon } = fetchMeta();
 const { fontFamily, titleFontFamily } = fetchTheme();
 
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: `assets/${logo.fileName}`
+        icon: `assets/${favicon.fileName}`
       }
     },
     'gatsby-plugin-sharp',
