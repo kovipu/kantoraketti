@@ -20,9 +20,9 @@ const HeaderA = ({ handleHamburgerClick, isMenuOpen, children }) => {
   const { title, headerLogo } = contentfulLandingPage;
 
   return (
-    <header className="top-0 w-full flex items-center md:justify-center z-10 md:relative md:p-3">
+    <header className="top-0 w-full flex items-center md:justify-center z-10 md:relative">
       <Link to="/" className="z-10 flex items-center justify-center">
-        <img src={headerLogo.file.url} alt="Site logo" className="h-10 w-10 md:h-14 md:w-14 m-3 flex" />
+        <img src={headerLogo.file.url} alt="Site logo" className="h-14 w-14 md:h-20 md:w-20 m-3 flex" />
         <h1 className="text-4xl md:text-6xl font-serif uppercase text-header-text">{title}</h1>
       </Link>
       <div className="w-0 absolute right-14 md:right-20">

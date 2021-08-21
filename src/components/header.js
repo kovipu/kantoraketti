@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useStaticQuery, graphql, navigate } from 'gatsby';
+import React, { useEffect, useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Menu from './menu';
 import HeaderA from '../layoutA/headerA';
 import HeaderB from '../layoutB/headerB';
 import HeaderC from '../layoutC/headerC';
 
-const Header = ({ isIndexPage }) => {
+const Header = ({ location }) => {
   const { contentfulTheme } = useStaticQuery(graphql`
     query HeaderQuery {
       contentfulTheme(isPublished: { eq: "published" }) {
@@ -17,18 +17,17 @@ const Header = ({ isIndexPage }) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => setIsMenuOpen(false), [location]);
+
   const handleHamburgerClick = () => setIsMenuOpen(!isMenuOpen);
 
-  const navigateAndClose = (urlSlug) => {
-    setIsMenuOpen(false);
-    navigate(`/${urlSlug}`);
-  };
+  const isIndexPage = location.pathname === '/';
 
   return (
     <RenderHeader
       siteLayout={contentfulTheme.siteLayout}
       headerProps={{ isIndexPage, handleHamburgerClick, isMenuOpen }}>
-      <Menu isOpen={isMenuOpen} onLinkClick={navigateAndClose} />
+      <Menu isOpen={isMenuOpen} />
     </RenderHeader>
   );
 };

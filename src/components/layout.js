@@ -4,7 +4,7 @@ import Header from './header';
 
 const Layout = ({ children, location }) => (
   <>
-    <Header isIndexPage={location.pathname === '/'} />
+    <Header location={location} />
     {children}
     <Footer />
   </>

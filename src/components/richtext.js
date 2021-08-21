@@ -24,10 +24,12 @@ const options = {
     ),
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => (
       <Img
-        className="m-3 rounded-lg"
+        imgStyle={{ maxHeight: '24rem', width: '48rem', maxWidth: '80vw', objectFit: 'contain' }}
+        style={{ maxWidth: '80vw' }}
+        className="max-h-96 max-w-screen m-3"
         key={data.target.contentful_id}
-        fluid={data.target.fluid}
-        alt={data.target.title}
+        fixed={data.target.fixed}
+        alt={data.target.titlse}
       />
     )
   }

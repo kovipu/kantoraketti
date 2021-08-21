@@ -35,8 +35,8 @@ export const query = graphql`
             contentful_id
             __typename
             title
-            fluid(maxWidth: 1000) {
-              ...GatsbyContentfulFluid
+            fixed(width: 1000) {
+              ...GatsbyContentfulFixed
             }
           }
         }

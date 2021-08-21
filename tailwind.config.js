@@ -12,7 +12,9 @@ const {
   textColor,
   textColorInverted,
   accentColor,
-  linkColor
+  linkColor,
+  footerBackgroundColor,
+  footerTextColor,
 } = fetchTheme();
 
 module.exports = {
@@ -31,6 +33,10 @@ module.exports = {
       menu: {
         background: menuBackgroundColor,
         text: menuTextColor
+      },
+      footer: {
+        background: footerBackgroundColor,
+        text: footerTextColor
       },
       text: {
         DEFAULT: textColor,
