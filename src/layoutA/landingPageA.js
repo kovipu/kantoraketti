@@ -26,7 +26,7 @@ const LandingPageA = () => {
   return (
     <main className="">
       <Seo />
-      <Img className="h-80 lg:h-96 w-screen" fluid={heroImage.fluid} alt="" />
+      <Img className="h-80 lg:h-96 w-full" fluid={heroImage.fluid} alt="" />
       <div
         className="flex flex-wrap justify-center items-end md:items-center bg-gradient-to-b from-background to-background-alt"
         style={{ minHeight: 'calc(100vh - 424px)' }}>
