@@ -30,7 +30,7 @@ const Footer = () => {
     <footer className="bg-footer-background text-footer-text flex flex-col justify-center items-center text-xl p-4">
       <img src={contentfulLandingPage.footerLogo.file.url} alt="logo" className="h-28 w-28" />
       <RichText data={contentfulLandingPage.footerText} />
-      <ul className="flex flex-row flex-wrap">
+      <ul className="flex flex-col md:flex-row flex-wrap">
         {allContentfulFooterLink.nodes.map((item) => (
           <li key={item.link}>
             <a

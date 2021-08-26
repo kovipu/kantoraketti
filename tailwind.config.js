@@ -9,6 +9,7 @@ const {
   hamburgerColor,
   hamburgerColorAlt,
   menuBackgroundColor,
+  menuHeaderColor,
   menuTextColor,
   headingColor,
   textColor,
@@ -38,6 +39,7 @@ module.exports = {
       },
       menu: {
         background: menuBackgroundColor,
+        header: menuHeaderColor,
         text: menuTextColor
       },
       footer: {

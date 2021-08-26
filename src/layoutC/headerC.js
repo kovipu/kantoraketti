@@ -22,16 +22,17 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
         }
       }
       contentfulNavigation(isPublished: { eq: "published" }) {
-        items {
-          title
-          urlSlug
+        navigationCategories {
+          navigationItems {
+            title
+            urlSlug
+          }
         }
       }
     }
   `);
 
   const { title, headerSubtitle, heroImage, headerLogo } = contentfulLandingPage;
-  const { items } = contentfulNavigation;
 
   return (
     <>
@@ -58,7 +59,7 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
         </div>
       </div>
       <nav className="hidden lg:block bg-menu-background text-center leading-4 h-14">
-        {items.map(({ urlSlug, title }) => (
+        {contentfulNavigation.navigationCategories[0].navigationItems.map(({ urlSlug, title }) => (
           <Link key={title} to={`/${urlSlug}`} className="leading-loose m-3 text-header-text text-2xl hover:underline">
             {title}
           </Link>

@@ -14,9 +14,11 @@ const HeaderB = ({ handleHamburgerClick, isMenuOpen, children }) => {
         }
       }
       contentfulNavigation(isPublished: { eq: "published" }) {
-        items {
-          title
-          urlSlug
+        navigationCategories {
+          navigationItems {
+            title
+            urlSlug
+          }
         }
       }
     }
@@ -30,7 +32,7 @@ const HeaderB = ({ handleHamburgerClick, isMenuOpen, children }) => {
         </Link>
 
         <div className="ml-auto">
-          {contentfulNavigation.items.map(({ urlSlug, title }) => (
+          {contentfulNavigation.navigationCategories[0].navigationItems.map(({ urlSlug, title }) => (
             <Link
               key={title}
               to={`/${urlSlug}`}
