@@ -23,8 +23,10 @@ const Menu = ({ isOpen }) => {
       }`}>
       <div className="flex flex-wrap m-10 w-full lg:justify-around max-w-7xl mx-auto">
         {contentfulNavigation.navigationCategories.map(({ name, navigationItems }) => (
-          <div className="m-6">
-            <h2 className="p-1 text-lg text-menu-header">{name}</h2>
+          <div key={name} className="m-6">
+            {contentfulNavigation.navigationCategories.length > 1 && (
+              <h2 className="p-1 text-lg text-menu-header">{name}</h2>
+            )}
             <ul>
               {navigationItems.map(({ title, urlSlug }) => (
                 <li key={title} className="p-1 text-2xl text-menu-text hover:underline cursor-pointer">
