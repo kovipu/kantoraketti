@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import Seo from '../components/seo';
 import RichText from '../components/richtext';
 
-const LandingPageA = () => {
+const LandingPageAdamas = () => {
   const { contentfulLandingPage } = useStaticQuery(graphql`
     query {
       contentfulLandingPage(isPublished: { eq: "published" }) {
@@ -26,11 +26,11 @@ const LandingPageA = () => {
   return (
     <main className="">
       <Seo />
-      <Img className="h-80 lg:h-96 w-full" fluid={heroImage.fluid} alt="" />
+      <Img className="w-full h-80 lg:h-96" fluid={heroImage.fluid} alt="" />
       <div
-        className="flex flex-wrap justify-center items-end md:items-center bg-gradient-to-b from-background to-background-alt"
+        className="flex flex-wrap items-end justify-center md:items-center bg-gradient-to-b from-background to-background-alt"
         style={{ minHeight: 'calc(100vh - 424px)' }}>
-        <div className="text-text m-4 max-w-md text-lg">
+        <div className="max-w-md m-4 text-lg text-text">
           <RichText data={bio} />
         </div>
       </div>
@@ -38,4 +38,4 @@ const LandingPageA = () => {
   );
 };
 
-export default LandingPageA;
+export default LandingPageAdamas;

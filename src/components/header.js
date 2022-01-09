@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Menu from './menu';
-import HeaderA from '../layoutA/headerA';
-import HeaderB from '../layoutB/headerB';
-import HeaderC from '../layoutC/headerC';
+import HeaderMachina from '../layoutMachina/headerMachina';
+import HeaderAdamas from '../layoutAdamas/headerAdamas';
 
 const Header = ({ location }) => {
   const { contentfulTheme } = useStaticQuery(graphql`
@@ -34,12 +33,10 @@ const Header = ({ location }) => {
 
 const RenderHeader = ({ siteLayout, children, headerProps }) => {
   switch (siteLayout) {
-    case 'A':
-      return <HeaderA {...headerProps}>{children}</HeaderA>;
-    case 'B':
-      return <HeaderB {...headerProps}>{children}</HeaderB>;
-    case 'C':
-      return <HeaderC {...headerProps}>{children}</HeaderC>;
+    case 'adamas':
+      return <HeaderAdamas {...headerProps}>{children}</HeaderAdamas>;
+    case 'machina':
+      return <HeaderMachina {...headerProps}>{children}</HeaderMachina>;
     default:
       throw new Error('Invalid site layout');
   }

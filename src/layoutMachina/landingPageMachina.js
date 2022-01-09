@@ -5,7 +5,7 @@ import Seo from '../components/seo';
 import RichText from '../components/richtext';
 import Events from '../components/events';
 
-const LandingPageC = () => {
+const LandingPageMachina = () => {
   const { contentfulLandingPage } = useStaticQuery(graphql`
     query {
       contentfulLandingPage(isPublished: { eq: "published" }) {
@@ -23,15 +23,15 @@ const LandingPageC = () => {
         minHeight: `calc(100vh - 24rem - 3.5rem - 6rem)`
       }}>
       <Seo />
-      <div className="flex flex-grow flex-wrap">
-        <div className="flex-grow flex flex-col items-center justify-center p-4">
+      <div className="flex flex-wrap flex-grow">
+        <div className="flex flex-col items-center justify-center flex-grow p-4">
           <RichText data={contentfulLandingPage.bio} />
         </div>
-        <div className="flex-grow height-full bg-menu-background opacity-90 flex flex-col items-center justify-center p-8">
+        <div className="flex flex-col items-center justify-center flex-grow p-8 height-full bg-menu-background opacity-90">
           <Events />
         </div>
       </div>
     </main>
   );
 };
-export default LandingPageC;
+export default LandingPageMachina;

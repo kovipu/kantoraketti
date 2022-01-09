@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 import Hamburger from '../components/hamburger';
 
-const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) => {
+const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) => {
   const { contentfulLandingPage, contentfulNavigation } = useStaticQuery(graphql`
     query {
       contentfulLandingPage(isPublished: { eq: "published" }) {
@@ -47,20 +47,20 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
           fluid={heroImage.fluid}
           alt=""
         />
-        <div className="row-start-1 col-start-1 flex justify-center items-center z-10">
+        <div className="z-10 flex items-center justify-center col-start-1 row-start-1">
           <Link to="/" className="flex items-center">
-            <img src={headerLogo.file.url} alt="Site logo" className="h-20 lg:h-32 flex" />
-            <h1 className="font-serif text-header-text z-10 text-5xl lg:text-7xl uppercase">{title}</h1>
-            <p className="hidden md:block text-header-text text-2xl w-52 m-7">{headerSubtitle}</p>
+            <img src={headerLogo.file.url} alt="Site logo" className="flex h-20 lg:h-32" />
+            <h1 className="z-10 font-serif text-5xl uppercase text-header-text lg:text-7xl">{title}</h1>
+            <p className="hidden text-2xl md:block text-header-text w-52 m-7">{headerSubtitle}</p>
           </Link>
         </div>
-        <div className="row-start-1 col-start-1 flex justify-end">
+        <div className="flex justify-end col-start-1 row-start-1">
           <Hamburger onClick={handleHamburgerClick} isOpen={isMenuOpen} />
         </div>
       </div>
-      <nav className="hidden lg:block bg-menu-background text-center leading-4 h-14">
+      <nav className="hidden leading-4 text-center lg:block bg-menu-background h-14">
         {contentfulNavigation.navigationCategories[0].navigationItems.map(({ urlSlug, title }) => (
-          <Link key={title} to={`/${urlSlug}`} className="leading-loose m-3 text-header-text text-2xl hover:underline">
+          <Link key={title} to={`/${urlSlug}`} className="m-3 text-2xl leading-loose text-header-text hover:underline">
             {title}
           </Link>
         ))}
@@ -70,4 +70,4 @@ const HeaderC = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) =>
   );
 };
 
-export default HeaderC;
+export default HeaderMachina;
