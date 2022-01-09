@@ -21,8 +21,7 @@ const {
 } = fetchTheme();
 
 module.exports = {
-  purge: ['./src/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.js'],
   theme: {
     colors: {
       background: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Hamburger from '../components/hamburger';
 
@@ -11,9 +11,7 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
         title
         headerSubtitle
         heroImage {
-          fluid(maxWidth: 1000, quality: 100) {
-            ...GatsbyContentfulFluid
-          }
+          gatsbyImageData
         }
         headerLogo {
           file {
@@ -37,14 +35,14 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
   return (
     <>
       <div
-        className={`grid transition-all duration-500 bg-header-background border-b-8 border-menu-background lg:border-0 ${
+        className={`grid transition-all duration-500 bg-header-background border-menu-background lg:border-0 ${
           isIndexPage ? 'max-h-96' : 'max-h-40'
         }`}>
-        <Img
+        <GatsbyImage
           className={`transition-all duration-500 row-start-1 col-start-1 ${
             isIndexPage ? 'opacity-50 max-h-96' : 'opacity-0 max-h-40'
           }`}
-          fluid={heroImage.fluid}
+          image={heroImage.gatsbyImageData}
           alt=""
         />
         <div className="z-10 flex items-center justify-center col-start-1 row-start-1">
@@ -58,7 +56,7 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
           <Hamburger onClick={handleHamburgerClick} isOpen={isMenuOpen} />
         </div>
       </div>
-      <nav className="hidden leading-4 text-center lg:block bg-menu-background h-14">
+      <nav className="hidden text-center lg:block bg-menu-background h-14">
         {contentfulNavigation.navigationCategories[0].navigationItems.map(({ urlSlug, title }) => (
           <Link key={title} to={`/${urlSlug}`} className="m-3 text-2xl leading-loose text-header-text hover:underline">
             {title}
