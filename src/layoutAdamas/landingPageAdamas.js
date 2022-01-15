@@ -24,7 +24,7 @@ const LandingPageAdamas = () => {
   return (
     <main className="">
       <Seo />
-      <GatsbyImage className="w-full h-80 lg:h-96" image={heroImage.gatsbyImageData} alt="" />
+      <GatsbyImage className="w-full h-80 lg:h-96" loading="eager" image={heroImage.gatsbyImageData} alt="" />
       <div
         className="flex flex-wrap items-end justify-center md:items-center bg-gradient-to-b from-background to-background-alt"
         style={{ minHeight: 'calc(100vh - 424px)' }}

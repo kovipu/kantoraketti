@@ -8,13 +8,9 @@ const Page = ({ data }) => {
   const { title, description, lang, body } = data.contentfulPage;
 
   return (
-    <main
-      style={{
-        minHeight: `calc(100vh - 10rem - 3.5rem - 6rem)`
-      }}
-    >
+    <main className="min-h-[30vh]">
       <Seo title={title} description={description} lang={lang} />
-      <article className="mt-3 lg:mt-0">
+      <article className="my-3 mb-12 lg:mt-0">
         <div className="max-w-3xl p-4 mx-auto md:p-8 text-text">
           <RichText data={body} />
         </div>

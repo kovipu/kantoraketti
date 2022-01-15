@@ -17,16 +17,11 @@ const LandingPageMachina = () => {
   `);
 
   return (
-    <main
-      className="flex flex-col"
-      style={{
-        minHeight: `calc(100vh - 24rem - 3.5rem - 6rem)`
-      }}
-    >
+    <main className="flex flex-col">
       <Seo />
       <div className="flex flex-wrap">
         <div className="flex flex-col items-center justify-center w-screen p-4 md:w-1/2">
-          <div className="max-w-lg">
+          <div className="max-w-md">
             <RichText data={contentfulLandingPage.bio} />
           </div>
         </div>
