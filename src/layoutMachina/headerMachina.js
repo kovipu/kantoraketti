@@ -37,7 +37,8 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
       <div
         className={`grid transition-all duration-500 bg-header-background border-menu-background lg:border-0 ${
           isIndexPage ? 'max-h-96' : 'max-h-40'
-        }`}>
+        }`}
+      >
         <GatsbyImage
           className={`transition-all duration-500 row-start-1 col-start-1 ${
             isIndexPage ? 'opacity-50 max-h-96' : 'opacity-0 max-h-40'
@@ -52,7 +53,7 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
             <p className="hidden text-2xl md:block text-header-text w-52 m-7">{headerSubtitle}</p>
           </Link>
         </div>
-        <div className="flex justify-end col-start-1 row-start-1">
+        <div className="flex justify-end col-start-1 row-start-1 m-4">
           <Hamburger onClick={handleHamburgerClick} isOpen={isMenuOpen} />
         </div>
       </div>

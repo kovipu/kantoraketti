@@ -21,7 +21,8 @@ const LandingPageMachina = () => {
       className="flex flex-col"
       style={{
         minHeight: `calc(100vh - 24rem - 3.5rem - 6rem)`
-      }}>
+      }}
+    >
       <Seo />
       <div className="flex flex-wrap flex-grow">
         <div className="flex flex-col items-center justify-center flex-grow p-4">

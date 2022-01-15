@@ -25,7 +25,8 @@ const Header = ({ location }) => {
   return (
     <RenderHeader
       siteLayout={contentfulTheme.siteLayout}
-      headerProps={{ isIndexPage, handleHamburgerClick, isMenuOpen }}>
+      headerProps={{ isIndexPage, handleHamburgerClick, isMenuOpen }}
+    >
       <Menu isOpen={isMenuOpen} />
     </RenderHeader>
   );

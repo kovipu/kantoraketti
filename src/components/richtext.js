@@ -23,7 +23,6 @@ const options = {
       </a>
     ),
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
-      console.log(data)
       const { contentful_id, gatsbyImageData, title } = data.target;
       return (
         <GatsbyImage
@@ -34,7 +33,7 @@ const options = {
           image={gatsbyImageData}
           alt={title}
         />
-      )
+      );
     }
   }
 };

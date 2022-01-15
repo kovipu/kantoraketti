@@ -7,10 +7,11 @@ const Hamburger = ({ onClick, isOpen, showOnDesktop }) => {
 
   return (
     <button
-      className={`flex flex-col h-12 w-12 justify-center items-center relative ${
+      className={`flex flex-col h-12 w-12 justify-center items-center ${isOpen ? 'fixed top-4 sm:top-7' : 'relative'} ${
         showOnDesktop ? '' : 'lg:hidden'
       } z-30`}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       <div className={`${genericHamburgerLine} ${isOpen ? 'rotate-45 translate-y-3 opacity-100' : 'opacity-100'}`} />
       <div className={`${genericHamburgerLine} ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
       <div className={`${genericHamburgerLine} ${isOpen ? '-rotate-45 -translate-y-3 opacity-100' : 'opacity-100'}`} />

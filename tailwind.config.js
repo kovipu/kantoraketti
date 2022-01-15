@@ -57,7 +57,12 @@ module.exports = {
       sans: [fontFamily, 'sans-serif'],
       serif: [titleFontFamily, 'serif']
     },
-    extend: {}
+    extend: {
+      spacing: {
+        128: '32rem',
+        144: '36rem'
+      }
+    }
   },
   variants: {
     extend: {}

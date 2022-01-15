@@ -37,7 +37,8 @@ const Footer = () => {
               className="flex items-center p-4 hover:text-background"
               href={item.link}
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               <Icon linkType={item.linkType} />
               {item.text}
             </a>
