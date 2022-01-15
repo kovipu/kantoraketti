@@ -24,6 +24,7 @@ const options = {
     ),
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
       const { contentful_id, gatsbyImageData, title } = data.target;
+
       return (
         <GatsbyImage
           imgStyle={{ maxHeight: '24rem', width: '48rem', maxWidth: '80vw', objectFit: 'contain' }}
