@@ -13,7 +13,7 @@ const Events = () => {
   }, []);
 
   if (events.length === 0) {
-    return <p>Ei tulevia tapahtumia.</p>;
+    return <p className="text-lg">Ei tulevia tapahtumia.</p>;
   }
 
   return events.map((event, idx) => <Event event={event} key={idx} />);
@@ -24,8 +24,8 @@ const Event = ({ event }) => {
   return (
     <div className="mx-3 my-6 text-lef">
       <h2 className="text-xl font-bold">{summary}</h2>
-      <p className="py-1 text-sm">{time}</p>
-      <p className="text-sm">{location}</p>
+      <p className="py-1">{time}</p>
+      <p>{location}</p>
     </div>
   );
 };

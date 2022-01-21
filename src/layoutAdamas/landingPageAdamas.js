@@ -33,7 +33,7 @@ const LandingPageAdamas = () => {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center w-screen text-lg height-full bg-background-alt text-text lg:w-1/3">
-          <div className="max-w-md mx-4 my-6 lg:my-14">
+          <div className="max-w-md mx-4 my-6 text-sm lg:my-14">
             <h1 className="m-3 text-3xl font-bold text-text-heading">Tapahtumat</h1>
             <Events />
           </div>

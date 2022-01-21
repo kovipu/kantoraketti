@@ -34,11 +34,7 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
 
   return (
     <>
-      <div
-        className={`grid bg-header-background border-menu-background lg:border-0 ${
-          isIndexPage ? 'max-h-96 2xl:max-h-144' : 'max-h-40'
-        }`}
-      >
+      <div className={`grid bg-header-background ${isIndexPage ? 'max-h-96 2xl:max-h-144' : 'max-h-40'}`}>
         <GatsbyImage
           className={`row-start-1 col-start-1 ${
             isIndexPage ? 'opacity-50 max-h-96 2xl:max-h-144' : 'opacity-0 max-h-40'
