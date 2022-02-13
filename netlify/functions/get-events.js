@@ -47,7 +47,7 @@ exports.handler = async () => {
 };
 
 /*
- * Format events to include only the fields we want and a nicely formatted time.
+ * Format events to include only the fields we want.
  */
 const formatEvent = (event) => {
   const { start, end, location, summary } = event;

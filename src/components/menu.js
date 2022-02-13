@@ -33,7 +33,7 @@ const Menu = ({ isOpen }) => {
         {contentfulNavigation.navigationCategories.map(({ name, navigationItems }) => (
           <div key={name} className="mx-6 my-3">
             {contentfulNavigation.navigationCategories.length > 1 && (
-              <h2 className="p-1 text-xl text-menu-header">{name}</h2>
+              <h2 className="p-1 text-xl text-menu-header font-bold">{name}</h2>
             )}
             <ul>
               {navigationItems.map(({ title, urlSlug }) => (

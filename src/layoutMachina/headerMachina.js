@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import Hamburger from '../components/hamburger';
 
 const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children }) => {
-  const { contentfulLandingPage, contentfulNavigation } = useStaticQuery(graphql`
+  const { contentfulLandingPage } = useStaticQuery(graphql`
     query {
       contentfulLandingPage(isPublished: { eq: "published" }) {
         title
@@ -16,14 +16,6 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
         headerLogo {
           file {
             url
-          }
-        }
-      }
-      contentfulNavigation(isPublished: { eq: "published" }) {
-        navigationCategories {
-          navigationItems {
-            title
-            urlSlug
           }
         }
       }
@@ -54,13 +46,6 @@ const HeaderMachina = ({ isIndexPage, handleHamburgerClick, isMenuOpen, children
           <Hamburger onClick={handleHamburgerClick} isOpen={isMenuOpen} />
         </div>
       </div>
-      <nav className="hidden text-center lg:block bg-menu-background h-14">
-        {contentfulNavigation.navigationCategories[0].navigationItems.map(({ urlSlug, title }) => (
-          <Link key={title} to={`/${urlSlug}`} className="m-3 text-2xl leading-loose text-header-text hover:underline">
-            {title}
-          </Link>
-        ))}
-      </nav>
       {children}
     </>
   );

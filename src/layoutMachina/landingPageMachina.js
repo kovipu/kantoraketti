@@ -20,7 +20,7 @@ const LandingPageMachina = () => {
     <main className="flex flex-col">
       <Seo />
       <div className="flex flex-wrap">
-        <div className="flex flex-col items-center justify-center w-screen p-4 md:py-12 md:w-1/2">
+        <div className="flex flex-col items-center justify-center w-screen p-4 md:py-24 md:w-1/2">
           <div className="max-w-md text-lg md:text-xl">
             <RichText data={contentfulLandingPage.bio} />
           </div>
