@@ -5,7 +5,7 @@ import Seo from '../components/seo';
 import RichText from '../components/richtext';
 
 const Page = ({ data }) => {
-  const { title, description, lang, body, iframeUrl } = data.contentfulPage;
+  const { title, description, lang, body } = data.contentfulPage;
 
   return (
     <main className="min-h-[30vh] mb-24">
@@ -14,27 +14,8 @@ const Page = ({ data }) => {
         <div className="max-w-3xl p-4 mx-auto md:p-8 text-text">
           <RichText data={body} />
         </div>
-        <Iframe url={iframeUrl} />
       </article>
     </main>
-  );
-};
-
-const Iframe = ({ url }) => {
-  if (!url) {
-    return null;
-  }
-
-  return (
-    <div className="relative overflow-hidden mx-auto max-w-3xl h-128">
-      <iframe
-        src={url}
-        className="absolute border-0 w-full h-full top-0 left-0"
-        height="600"
-        frameborder="0"
-        scrolling="no"
-      />
-    </div>
   );
 };
 
@@ -55,7 +36,6 @@ export const query = graphql`
           }
         }
       }
-      iframeUrl
     }
   }
 `;
