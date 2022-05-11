@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Seo from '../components/seo';
 import RichText from '../components/richtext';
 import Events from '../components/events';
+import Sponsors from '../components/sponsors';
 
 const LandingPageMachina = () => {
   const { contentfulLandingPage } = useStaticQuery(graphql`
@@ -17,6 +18,7 @@ const LandingPageMachina = () => {
   `);
 
   return (
+    <>
     <main className="flex flex-col">
       <Seo />
       <div className="flex flex-wrap">
@@ -33,6 +35,9 @@ const LandingPageMachina = () => {
         </div>
       </div>
     </main>
+    <Sponsors />
+    </>
   );
 };
+
 export default LandingPageMachina;

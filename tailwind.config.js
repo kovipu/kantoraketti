@@ -16,6 +16,7 @@ const {
   textColorInverted,
   accentColor,
   linkColor,
+  sponsorsBackgroundColor,
   footerBackgroundColor,
   footerTextColor
 } = fetchTheme();
@@ -40,6 +41,9 @@ module.exports = {
         background: menuBackgroundColor,
         header: menuHeaderColor,
         text: menuTextColor
+      },
+      sponsors: {
+        background: sponsorsBackgroundColor
       },
       footer: {
         background: footerBackgroundColor,
